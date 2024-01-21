@@ -4237,7 +4237,6 @@ header .navbar .navbar-nav .defaultBtn:hover {
   transition: 0.3s ease-in-out;
 }
 .mainSlider .mainSliderContainer .swiper-slide .info {
-  padding-right: 120px;
   max-width: 700px;
   width: 100%;
   display: flex;
