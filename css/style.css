@@ -493,7 +493,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 1024;
   box-shadow: 0 16px 32px 0 rgba(7, 28, 31, 0.062745098);
 }
 header .navbar .navbar-brand img {
