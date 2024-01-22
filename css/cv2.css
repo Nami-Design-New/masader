@@ -1,0 +1,1429 @@
+@import url("https://fonts.googleapis.com/css2?family=Almarai&display=swap");
+@font-face {
+  font-family: kaff;
+  font-display: swap;
+  src: url("../fonts/29ltkaff-regular.ttf");
+}
+:root {
+  --mainColor: #3c5c98;
+  --secondColor: #3c5c98;
+}
+
+* {
+  font-family: "kaff";
+  margin: 0;
+  padding: 0;
+  outline: none;
+  direction: rtl;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+  border-radius: 0px !important;
+}
+::-webkit-scrollbar-track {
+  border-radius: 0px !important;
+  background: #d8d8d8;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #b5b5b5;
+  outline: none;
+  border-radius: 20px !important;
+}
+
+:target {
+  scroll-margin-top: 50px;
+}
+
+a {
+  text-decoration: none;
+  transition: var(--transition) !important;
+}
+a:hover {
+  text-decoration: none;
+  color: var(--mainColor);
+}
+
+button {
+  cursor: pointer;
+}
+button:focus {
+  outline: 0;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+p {
+  font-size: 12px;
+}
+
+body {
+  margin: auto;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  background-color: whitesmoke;
+  pointer-events: none;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  gap: 32px;
+  min-height: 100vh;
+  margin: auto;
+  background-color: white;
+  isolation: isolate;
+  width: 210mm;
+  padding: 0 20px;
+  margin: auto;
+}
+.container .title,
+.container .languages .title {
+  text-transform: uppercase;
+  color: #4f4f4f;
+}
+.container .languages .title {
+  color: #d3d3d3;
+}
+.container .sub {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #d9bd2e;
+  padding-bottom: 24px;
+  gap: 4px;
+}
+.container .sub .title {
+  color: #d3d3d3;
+}
+.container .sub .dis {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+.container .imageCol {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 200px;
+}
+.container .imageCol::before {
+  content: "";
+  width: 100%;
+  min-height: 120px;
+  background-color: var(--secondColor);
+  display: flex;
+  border-radius: 0 0 5000px 5000px;
+}
+.container .imageCol .mainInfo {
+  flex: 1;
+  background-color: var(--secondColor);
+  border-radius: 5000px 5000px 0 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 24px;
+  padding: 120px 24px 24px;
+}
+.container .imageCol .image {
+  display: flex;
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  margin: -70px auto;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1882352941);
+}
+.container .imageCol .image::before, .container .imageCol .image::after {
+  content: "";
+  display: flex;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .imageCol .image::before {
+  width: 110%;
+  height: 110%;
+  border: 2px solid var(--mainColor);
+}
+.container .imageCol .image::after {
+  width: 93%;
+  height: 93%;
+  border: 2px solid whitesmoke;
+}
+.container .imageCol .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  border-radius: 100%;
+}
+.container .informationCol {
+  flex: 2;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  position: relative;
+}
+.container .informationCol::before {
+  content: "";
+  width: 40px;
+  height: 50px;
+  display: flex;
+  border-radius: 100px 100px 0 0;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  background-color: var(--mainColor);
+}
+.container .informationCol .name {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.container .informationCol .name h1 {
+  color: var(--mainColor);
+  font-weight: bold;
+  font-size: 40px;
+}
+.container .informationCol .name h3 {
+  margin-top: 10px;
+}
+.container .informationCol .category {
+  display: flex;
+  flex-direction: column;
+}
+.container .informationCol .category .title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.container .informationCol .category .title span {
+  padding: 8px 0 8px 24px;
+}
+.container .informationCol .category .title::before, .container .informationCol .category .title::after {
+  content: "";
+  display: flex;
+  background-color: var(--mainColor);
+}
+.container .informationCol .category .title::before {
+  width: 20px;
+  height: 40px;
+  border-radius: 100px 0 0 100px;
+}
+.container .informationCol .category .title::after {
+  height: 2px;
+  flex: 1;
+  border-radius: 10px;
+}
+.container .informationCol .category .innerInfo {
+  display: flex;
+  padding-top: 24px;
+}
+.container .informationCol .category .innerInfo .infoRow {
+  position: relative;
+  padding-right: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.container .informationCol .category .innerInfo .infoRow::before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #eee;
+  border-radius: 10px;
+}
+.container .informationCol .category .innerInfo .infoRow:last-child::before {
+  display: none;
+}
+.container .informationCol .category .innerInfo .infoRow .data {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.container .informationCol .category .innerInfo .infoRow .data .innerTitle {
+  font-weight: bold;
+  color: #777;
+}
+.container .informationCol .category .innerInfo .infoRow .data .innerData {
+  font-weight: bold;
+}
+.container .informationCol .category .passportData {
+  padding-top: 24px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  height: -moz-max-content;
+  height: max-content;
+}
+.container .informationCol .category .passportData .data {
+  flex: 1;
+  padding: 12px 24px;
+  background-color: #eee;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  white-space: nowrap;
+}
+.container .informationCol .category .passportData .data h6 {
+  color: #777;
+}
+.container .shape1 {
+  position: absolute;
+  top: -40px;
+  left: -70px;
+  width: 80%;
+  height: 130px;
+  z-index: -1;
+  background-color: #f4f4f4;
+  -webkit-clip-path: ellipse(61% 58% at 46% 19%);
+          clip-path: ellipse(61% 58% at 46% 19%);
+  transform: rotate(-4deg);
+}
+.container #btnSave {
+  padding: 10px 30px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.container .languages {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.container .languages .Percentages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.container .languages .Percentages .percentDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.container .languages .Percentages .percentDiv h5 {
+  color: #d3d3d3;
+}
+.container .percent {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.container .percent .percentNum {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: #eee;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 20px !important;
+  font-weight: bold;
+}
+.container .percent .percentNum span {
+  font-weight: normal;
+  color: #777;
+  font-size: 12px !important;
+}
+.container .percent .slice {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 100px, 100px, 50px);
+}
+.container .percent .bar {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(0deg);
+}
+.container .percent.p51 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p51 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p51 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p52 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p52 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p52 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p53 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p53 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p53 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p54 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p54 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p54 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p55 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p55 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p55 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p56 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p56 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p56 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p57 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p57 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p57 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p58 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p58 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p58 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p59 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p59 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p59 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p60 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p60 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p60 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p61 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p61 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p61 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p62 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p62 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p62 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p63 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p63 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p63 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p64 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p64 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p64 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p65 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p65 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p65 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p66 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p66 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p66 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p67 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p67 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p67 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p68 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p68 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p68 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p69 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p69 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p69 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p70 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p70 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p70 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p71 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p71 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p71 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p72 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p72 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p72 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p73 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p73 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p73 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p74 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p74 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p74 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p75 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p75 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p75 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p76 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p76 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p76 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p77 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p77 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p77 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p78 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p78 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p78 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p79 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p79 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p79 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p80 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p80 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p80 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p81 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p81 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p81 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p82 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p82 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p82 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p83 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p83 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p83 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p84 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p84 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p84 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p85 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p85 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p85 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p86 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p86 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p86 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p87 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p87 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p87 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p88 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p88 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p88 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p89 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p89 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p89 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p90 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p90 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p90 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p91 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p91 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p91 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p92 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p92 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p92 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p93 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p93 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p93 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p94 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p94 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p94 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p95 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p95 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p95 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p96 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p96 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p96 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p97 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p97 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p97 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p98 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p98 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p98 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p99 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p99 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p99 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p100 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.container .percent.p100 .bar:after {
+  transform: rotate(180deg);
+}
+.container .percent.p100 .fill {
+  position: absolute;
+  border: 4px solid #40b2b3;
+  width: 100px;
+  height: 100px;
+  clip: rect(0px, 50px, 100px, 0px);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.container .percent.p1 .bar {
+  transform: rotate(3.6deg);
+}
+.container .percent.p2 .bar {
+  transform: rotate(7.2deg);
+}
+.container .percent.p3 .bar {
+  transform: rotate(10.8deg);
+}
+.container .percent.p4 .bar {
+  transform: rotate(14.4deg);
+}
+.container .percent.p5 .bar {
+  transform: rotate(18deg);
+}
+.container .percent.p6 .bar {
+  transform: rotate(21.6deg);
+}
+.container .percent.p7 .bar {
+  transform: rotate(25.2deg);
+}
+.container .percent.p8 .bar {
+  transform: rotate(28.8deg);
+}
+.container .percent.p9 .bar {
+  transform: rotate(32.4deg);
+}
+.container .percent.p10 .bar {
+  transform: rotate(36deg);
+}
+.container .percent.p11 .bar {
+  transform: rotate(39.6deg);
+}
+.container .percent.p12 .bar {
+  transform: rotate(43.2deg);
+}
+.container .percent.p13 .bar {
+  transform: rotate(46.8deg);
+}
+.container .percent.p14 .bar {
+  transform: rotate(50.4deg);
+}
+.container .percent.p15 .bar {
+  transform: rotate(54deg);
+}
+.container .percent.p16 .bar {
+  transform: rotate(57.6deg);
+}
+.container .percent.p17 .bar {
+  transform: rotate(61.2deg);
+}
+.container .percent.p18 .bar {
+  transform: rotate(64.8deg);
+}
+.container .percent.p19 .bar {
+  transform: rotate(68.4deg);
+}
+.container .percent.p20 .bar {
+  transform: rotate(72deg);
+}
+.container .percent.p21 .bar {
+  transform: rotate(75.6deg);
+}
+.container .percent.p22 .bar {
+  transform: rotate(79.2deg);
+}
+.container .percent.p23 .bar {
+  transform: rotate(82.8deg);
+}
+.container .percent.p24 .bar {
+  transform: rotate(86.4deg);
+}
+.container .percent.p25 .bar {
+  transform: rotate(90deg);
+}
+.container .percent.p26 .bar {
+  transform: rotate(93.6deg);
+}
+.container .percent.p27 .bar {
+  transform: rotate(97.2deg);
+}
+.container .percent.p28 .bar {
+  transform: rotate(100.8deg);
+}
+.container .percent.p29 .bar {
+  transform: rotate(104.4deg);
+}
+.container .percent.p30 .bar {
+  transform: rotate(108deg);
+}
+.container .percent.p31 .bar {
+  transform: rotate(111.6deg);
+}
+.container .percent.p32 .bar {
+  transform: rotate(115.2deg);
+}
+.container .percent.p33 .bar {
+  transform: rotate(118.8deg);
+}
+.container .percent.p34 .bar {
+  transform: rotate(122.4deg);
+}
+.container .percent.p35 .bar {
+  transform: rotate(126deg);
+}
+.container .percent.p36 .bar {
+  transform: rotate(129.6deg);
+}
+.container .percent.p37 .bar {
+  transform: rotate(133.2deg);
+}
+.container .percent.p38 .bar {
+  transform: rotate(136.8deg);
+}
+.container .percent.p39 .bar {
+  transform: rotate(140.4deg);
+}
+.container .percent.p40 .bar {
+  transform: rotate(144deg);
+}
+.container .percent.p41 .bar {
+  transform: rotate(147.6deg);
+}
+.container .percent.p42 .bar {
+  transform: rotate(151.2deg);
+}
+.container .percent.p43 .bar {
+  transform: rotate(154.8deg);
+}
+.container .percent.p44 .bar {
+  transform: rotate(158.4deg);
+}
+.container .percent.p45 .bar {
+  transform: rotate(162deg);
+}
+.container .percent.p46 .bar {
+  transform: rotate(165.6deg);
+}
+.container .percent.p47 .bar {
+  transform: rotate(169.2deg);
+}
+.container .percent.p48 .bar {
+  transform: rotate(172.8deg);
+}
+.container .percent.p49 .bar {
+  transform: rotate(176.4deg);
+}
+.container .percent.p50 .bar {
+  transform: rotate(180deg);
+}
+.container .percent.p51 .bar {
+  transform: rotate(183.6deg);
+}
+.container .percent.p52 .bar {
+  transform: rotate(187.2deg);
+}
+.container .percent.p53 .bar {
+  transform: rotate(190.8deg);
+}
+.container .percent.p54 .bar {
+  transform: rotate(194.4deg);
+}
+.container .percent.p55 .bar {
+  transform: rotate(198deg);
+}
+.container .percent.p56 .bar {
+  transform: rotate(201.6deg);
+}
+.container .percent.p57 .bar {
+  transform: rotate(205.2deg);
+}
+.container .percent.p58 .bar {
+  transform: rotate(208.8deg);
+}
+.container .percent.p59 .bar {
+  transform: rotate(212.4deg);
+}
+.container .percent.p60 .bar {
+  transform: rotate(216deg);
+}
+.container .percent.p61 .bar {
+  transform: rotate(219.6deg);
+}
+.container .percent.p62 .bar {
+  transform: rotate(223.2deg);
+}
+.container .percent.p63 .bar {
+  transform: rotate(226.8deg);
+}
+.container .percent.p64 .bar {
+  transform: rotate(230.4deg);
+}
+.container .percent.p65 .bar {
+  transform: rotate(234deg);
+}
+.container .percent.p66 .bar {
+  transform: rotate(237.6deg);
+}
+.container .percent.p67 .bar {
+  transform: rotate(241.2deg);
+}
+.container .percent.p68 .bar {
+  transform: rotate(244.8deg);
+}
+.container .percent.p69 .bar {
+  transform: rotate(248.4deg);
+}
+.container .percent.p70 .bar {
+  transform: rotate(252deg);
+}
+.container .percent.p71 .bar {
+  transform: rotate(255.6deg);
+}
+.container .percent.p72 .bar {
+  transform: rotate(259.2deg);
+}
+.container .percent.p73 .bar {
+  transform: rotate(262.8deg);
+}
+.container .percent.p74 .bar {
+  transform: rotate(266.4deg);
+}
+.container .percent.p75 .bar {
+  transform: rotate(270deg);
+}
+.container .percent.p76 .bar {
+  transform: rotate(273.6deg);
+}
+.container .percent.p77 .bar {
+  transform: rotate(277.2deg);
+}
+.container .percent.p78 .bar {
+  transform: rotate(280.8deg);
+}
+.container .percent.p79 .bar {
+  transform: rotate(284.4deg);
+}
+.container .percent.p80 .bar {
+  transform: rotate(288deg);
+}
+.container .percent.p81 .bar {
+  transform: rotate(291.6deg);
+}
+.container .percent.p82 .bar {
+  transform: rotate(295.2deg);
+}
+.container .percent.p83 .bar {
+  transform: rotate(298.8deg);
+}
+.container .percent.p84 .bar {
+  transform: rotate(302.4deg);
+}
+.container .percent.p85 .bar {
+  transform: rotate(306deg);
+}
+.container .percent.p86 .bar {
+  transform: rotate(309.6deg);
+}
+.container .percent.p87 .bar {
+  transform: rotate(313.2deg);
+}
+.container .percent.p88 .bar {
+  transform: rotate(316.8deg);
+}
+.container .percent.p89 .bar {
+  transform: rotate(320.4deg);
+}
+.container .percent.p90 .bar {
+  transform: rotate(324deg);
+}
+.container .percent.p91 .bar {
+  transform: rotate(327.6deg);
+}
+.container .percent.p92 .bar {
+  transform: rotate(331.2deg);
+}
+.container .percent.p93 .bar {
+  transform: rotate(334.8deg);
+}
+.container .percent.p94 .bar {
+  transform: rotate(338.4deg);
+}
+.container .percent.p95 .bar {
+  transform: rotate(342deg);
+}
+.container .percent.p96 .bar {
+  transform: rotate(345.6deg);
+}
+.container .percent.p97 .bar {
+  transform: rotate(349.2deg);
+}
+.container .percent.p98 .bar {
+  transform: rotate(352.8deg);
+}
+.container .percent.p99 .bar {
+  transform: rotate(356.4deg);
+}
+.container .percent.p100 .bar {
+  transform: rotate(360deg);
+}/*# sourceMappingURL=cv2.css.map */

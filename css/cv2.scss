@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css2?family=Almarai&display=swap");
+@font-face {
+  font-family: kaff;
+  font-display: swap;
+  src: url("../fonts/29ltkaff-regular.ttf");
+}
+:root {
+  --mainColor: #3c5c98;
+  --secondColor: #3c5c98;
+}
+* {
+  font-family: "kaff";
+  margin: 0;
+  padding: 0;
+  outline: none;
+  direction: rtl;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+  border-radius: 0px !important;
+  &-track {
+    border-radius: 0px !important;
+    background: #d8d8d8;
+  }
+  &-thumb {
+    background-color: #b5b5b5;
+    outline: none;
+    border-radius: 20px !important;
+  }
+}
+:target {
+  scroll-margin-top: 50px;
+}
+a {
+  text-decoration: none;
+  transition: var(--transition) !important;
+  &:hover {
+    text-decoration: none;
+    color: var(--mainColor);
+  }
+}
+button {
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+}
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+p {
+  font-size: 12px;
+}
+body {
+  margin: auto;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  background-color: whitesmoke;
+  pointer-events: none;
+  overflow-x: hidden;
+}
+.container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  gap: 32px;
+  min-height: 100vh;
+  margin: auto;
+  background-color: white;
+  isolation: isolate;
+  width: 210mm;
+  padding: 0 20px;
+  margin: auto;
+  .title,
+  .languages .title {
+    text-transform: uppercase;
+    color: #4f4f4f;
+  }
+  .languages .title { 
+    color: #d3d3d3;
+  }
+  .sub {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #d9bd2e;
+    padding-bottom: 24px;
+    gap: 4px;
+    .title {
+      color: #d3d3d3;
+    }
+    .dis {
+      font-weight: bold;
+      font-size: 18px;
+      color: white;
+    }
+  }
+  .imageCol {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px;
+    &::before {
+      content: "";
+      width: 100%;
+      min-height: 120px;
+      background-color: var(--secondColor);
+      display: flex;
+      border-radius: 0 0 5000px 5000px;
+    }
+    .mainInfo {
+      flex: 1;
+      background-color: var(--secondColor);
+      border-radius: 5000px 5000px 0 0;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 24px;
+      padding: 120px 24px 24px;
+    }
+    .image {
+      display: flex;
+      border-radius: 100%;
+      width: 200px;
+      height: 200px;
+      margin: -70px auto;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1882352941);
+      &::before,
+      &::after {
+        content: "";
+        display: flex;
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &::before {
+        width: 110%;
+        height: 110%;
+        border: 2px solid var(--mainColor);
+      }
+      &::after {
+        width: 93%;
+        height: 93%;
+        border: 2px solid whitesmoke;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: top;
+        object-position: top;
+        border-radius: 100%;
+      }
+    }
+  }
+  .informationCol {
+    flex: 2;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    position: relative;
+    &::before {
+      content: "";
+      width: 40px;
+      height: 50px;
+      display: flex;
+      border-radius: 100px 100px 0 0;
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      background-color: var(--mainColor);
+    }
+    .name {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      h1 {
+        color: var(--mainColor);
+        font-weight: bold;
+        font-size: 40px;
+      }
+      h3 {
+        margin-top: 10px;
+      }
+    }
+    .category {
+      display: flex;
+      flex-direction: column;
+      .title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        span {
+          padding: 8px 0 8px 24px;
+        }
+        &::before,
+        &::after {
+          content: "";
+          display: flex;
+          background-color: var(--mainColor);
+        }
+        &::before {
+          width: 20px;
+          height: 40px;
+          border-radius: 100px 0 0 100px;
+        }
+        &::after {
+          height: 2px;
+          flex: 1;
+          border-radius: 10px;
+        }
+      }
+      .innerInfo {
+        display: flex;
+        padding-top: 24px;
+        .infoRow {
+          position: relative;
+          padding-right: 30px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          &::before {
+            content: "";
+            width: 2px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #eee;
+            border-radius: 10px;
+          }
+          &:last-child::before {
+            display: none;
+          }
+          .data {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            .innerTitle {
+              font-weight: bold;
+              color: #777;
+            }
+            .innerData {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .passportData {
+        padding-top: 24px;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        height: -moz-max-content;
+        height: max-content;
+        .data {
+          flex: 1;
+          padding: 12px 24px;
+          background-color: #eee;
+          border-radius: 8px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          white-space: nowrap;
+          h6 {
+            color: #777;
+          }
+        }
+      }
+    }
+  }
+  .shape1 {
+    position: absolute;
+    top: -40px;
+    left: -70px;
+    width: 80%;
+    height: 130px;
+    z-index: -1;
+    background-color: #f4f4f4;
+    clip-path: ellipse(61% 58% at 46% 19%);
+    transform: rotate(-4deg);
+  }
+  #btnSave {
+    padding: 10px 30px;
+    font-size: 18px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .languages {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .Percentages {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .percentDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        h5 {
+          color: #d3d3d3;
+        }
+      }
+    }
+  }
+  $PercentSize: 100px;
+  .percent {
+    position: relative;
+    width: $PercentSize;
+    height: $PercentSize;
+    overflow: hidden;
+    .percentNum {
+      position: absolute;
+      width: calc($PercentSize * 0.8);
+      height: calc($PercentSize * 0.8);
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%;
+      background-color: #eee;
+      transform: translateX(-50%) translateY(-50%);
+      font-size: calc($PercentSize * 0.2) !important;
+      font-weight: bold;
+      span {
+        font-weight: normal;
+        color: #777;
+        font-size: calc($PercentSize * 0.12) !important;
+      }
+    }
+    // the slice (mask)
+    .slice {
+      position: absolute;
+      width: $PercentSize;
+      height: $PercentSize;
+      clip: rect(0px, $PercentSize, $PercentSize, calc($PercentSize / 2));
+    }
+    // circle to show the status
+    .bar {
+      position: absolute;
+      border: calc($PercentSize * 0.04) solid #40b2b3;
+      width: $PercentSize;
+      height: $PercentSize;
+      clip: rect(0px, calc($PercentSize / 2), $PercentSize, 0px);
+      border-radius: 50%;
+      transform: rotate(0deg);
+    }
+    // loop to create all needed elements automatically
+    @for $j from 51 through 100 {
+      &.p#{$j} .slice {
+        clip: rect(auto, auto, auto, auto);
+      }
+      &.p#{$j} .bar:after {
+        transform: rotate(180deg);
+      }
+      &.p#{$j} .fill {
+        position: absolute;
+        border: calc($PercentSize * 0.04) solid #40b2b3;
+        width: $PercentSize;
+        height: $PercentSize;
+        clip: rect(0px, calc($PercentSize / 2), $PercentSize, 0px);
+        border-radius: 50%;
+        transform: rotate(180deg);
+      }
+    }
+    // loop to rotate all 100 circles
+    @for $j from 1 through 100 {
+      &.p#{$j} .bar {
+        transform: rotate((360/100 * $j) + deg);
+      }
+    }
+  }
+}
